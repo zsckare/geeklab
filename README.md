@@ -1,2 +1,2 @@
 # geeklab
-Refeactor del Control de Inentario y Notas de Geeklab
+Refactor del Control de Inventario y Notas de Geeklab
