@@ -1,0 +1,30 @@
+.card.padding-largo
+  .row  
+    %h2.center-align Lista de Clientes
+  .row
+    %table
+      %thead
+        %tr
+          %th Nombre
+          %th Apellido
+          %th Numero
+          %th
+          %th
+          %th
+
+      %tbody
+        - @clients.each do |client|
+          %tr
+            %td= client.name
+            %td= client.lastname
+            %td= client.number
+            %td.right
+              = link_to 'Ver', client, class: "btn blue"
+              = link_to 'Editar', edit_client_path(client), class: "btn green"
+              = link_to 'Borrar', client, :method => :delete, :data => { :confirm => '¿Estas Seguro?' }, class: "btn red"
+
+
+  .row
+    = link_to 'Nuevo Cliente', new_client_path, class: "btn blue"
+  .row
+    = will_paginate @clients

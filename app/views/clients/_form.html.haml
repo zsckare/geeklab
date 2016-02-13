@@ -1,0 +1,10 @@
+= form_for @client,builder: MaterializecssFormBuilder do |f|
+
+    = f.text_field :name,class: 'col s12 m12 l10 offset-l1 ', text: "Nombre"
+  
+    = f.text_field :lastname,class: 'col s12 m12 l10 offset-l1 ', text: "Apellido"
+  
+    = f.text_field :number,class: 'col s12 m12 l6 l10 offset-l1 ', text: "Numero"
+  
+    = f.submit @btn
+	

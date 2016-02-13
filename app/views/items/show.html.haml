@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Device:
+  = @item.device
+%p
+  %b Brand:
+  = @item.brand
+%p
+  %b Model:
+  = @item.model
+%p
+  %b Note:
+  = @item.note
+
+= link_to 'Edit', edit_item_path(@item)
+\|
+= link_to 'Back', items_path

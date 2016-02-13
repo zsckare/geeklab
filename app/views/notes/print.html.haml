@@ -1,0 +1,35 @@
+.card.padding-largo
+	.row
+		#print
+			.row
+				.col.s3.m3.l2.offset-l4
+					= image_tag "GeekLab", style: 'width:100px;'
+			.row
+				%p
+					%b Folio:
+					= @note.folio
+				%p
+					%b Fecha:
+					= @note.created_at.strftime("%d/%m/%Y")
+
+				%p
+					%b Cliente:
+					= @note.client.fullname
+					
+
+	.row
+		.center
+			%a{href: "javascript:imprSelec('print')", target: "_parent", class: 'btn blue' }
+				Imprimir
+				%i.material-icons.left
+					print
+:javascript
+	function imprSelec(nombre)
+	{
+		var articulo = document.getElementById(nombre);
+		var ventimp = window.open(' ','Nota','no','no','50','no','no','no','no','no','no','no','no','50');
+		ventimp.document.write(articulo.innerHTML );
+		ventimp.document.close();
+		ventimp.print( );
+		ventimp.close();
+	}

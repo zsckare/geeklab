@@ -1,0 +1,30 @@
+.row
+  .col.s12.m12.l12.card.padding-largo
+    .row
+      .row
+        %h1.center-align
+          Lista de Marcas
+      .row
+        %table
+          %thead
+            %tr
+              %th{style: "padding-left:1.2em;"}
+                Nombre
+              %th
+              %th
+              %th
+
+          %tbody.padding-largo
+            - @brands.each do |brand|
+              %tr
+                %td{style: "padding-left:1.2em;"}
+                  = brand.name
+                
+                %td.right
+                  = link_to 'Ver', brand, class: 'btn blue'
+                  = link_to 'Editar', edit_brand_path(brand), class: 'btn green'
+                  = link_to 'Eliminar', brand, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn red'
+
+
+    .row
+      = link_to 'Nueva Marca', new_brand_path, class: 'btn blue'

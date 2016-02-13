@@ -1,0 +1,24 @@
+.card.padding-largo
+  .row
+    %h3.center-align
+      Registrarse
+  .row
+    = form_for(resource, as: resource_name, url: registration_path(resource_name),builder: MaterializecssFormBuilder ) do |f|
+      - devise_error_messages!
+      .row
+        .col.s12.m12.l4.offset-l4
+          = f.label :nick
+          =f.text_field :nick
+
+          = f.label :email
+          = f.email_field :email, autofocus: true
+          
+          = f.label :password
+          
+    
+          = f.password_field :password, autocomplete: "off"
+  
+          = f.label :password_confirmation
+          = f.password_field :password_confirmation, autocomplete: "off" 
+          
+          = f.submit "Registrarse"

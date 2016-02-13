@@ -1,0 +1,27 @@
+.row
+  .col.s12.m12.l12.card.padding-largo
+    .row
+      %h1.center-align
+        Lista de Dispositivos
+    .row
+      %table
+        %thead
+          %tr
+            %th{style: "padding-left:1.2em;"}
+              Name
+            %th
+            %th
+            %th
+
+        %tbody
+          - @devices.each do |device|
+            %tr
+              %td{style: "padding-left:1.2em;"}
+                = device.name
+              %td.right
+                = link_to 'Ver', device,class: 'btn blue'
+                = link_to 'Editar', edit_device_path(device),class: 'btn green'
+                = link_to 'Eliminar', device, :method => :delete, :data => { :confirm => 'Are you sure?' },class: 'btn red'
+
+    .row
+      = link_to 'Nuevo Dispositivo', new_device_path,class: 'btn blue'

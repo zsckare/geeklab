@@ -1,0 +1,21 @@
+= form_for [@note,@item], remote: true, html: {id:"items-form", :"data-type" => "json"} do |f|
+  
+
+  .input-field
+    = f.label :device, "Dispositivo"
+    = f.collection_select :device, Device.all, :name, :name, include_blank: true
+  .input-field
+    = f.label :brand, "Marca"
+    = f.collection_select :brand, Brand.all, :name, :name, include_blank: true
+  .input-field
+    = f.label :model, "Modelo"
+    = f.text_field :model
+  .input-field
+    = f.label :price, "Cotizacion"
+    = f.text_field :price
+  .input-field
+    = f.label :details, "detalles"
+    = f.text_area :details,class: 'materialize-textarea'
+
+  .actions
+    = f.submit 'Agregar', class: 'btn blue'

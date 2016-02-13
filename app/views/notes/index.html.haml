@@ -1,0 +1,29 @@
+.row
+  .col.s12.m12.l12.card.padding-largo
+    .row
+      %h4.center-align Lista de Notas
+    .row
+      %table
+        %thead
+          %tr
+            %th Folio
+            %th Cliente
+            %th
+            %th
+            %th
+
+        %tbody
+          - @notes.each do |note|
+            %tr
+              %td= note.folio
+              %td 
+                = note.client.fullname
+              %td.right
+                = link_to 'Ver', note, class: 'btn blue'
+                = link_to 'Editar', edit_note_path(note), class: 'btn green'
+                = link_to 'Eliminar', note, :method => :delete, :data => { :confirm => '¿Estas Seguro?' }, class: 'btn red'
+
+    .row
+      = link_to 'Nueva Nota', new_note_path, class: 'btn blue'    
+    .row
+      = will_paginate @notes

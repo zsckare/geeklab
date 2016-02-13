@@ -1,0 +1,53 @@
+.row
+	.col.s12.m12.l12.card.padding-largo
+		%p
+			%b Folio:
+			= @note.folio
+		%p
+			%b Cliente:
+			= @note.client.fullname
+		%p
+			%b Telefono:
+			= @note.client.number
+.row
+	-if @note.status == nil
+		.col.s12.m12.l4.card.padding-largo
+			= render 'items/form'
+			
+	.col.s12.m12.l7.offset-l1.card.padding-largo
+		.row
+			%h4.center.medium
+				Dispositivos
+		.row
+			.row.padding-largo
+				%table.striped
+					%thead
+						%th
+							Dispositivo
+						%th
+							Marca
+						%th
+							Modelo
+						%th
+							Detalles
+						%th
+							Cotizacion
+						%th
+					%tbody#items-container
+						- @note.items.each do |item|
+							%tr
+								%td
+									= item.device
+								%td
+									= item.brand
+								%td
+									= item.model
+								%td
+									= item.details
+								%td
+									= item.price
+								%td.right
+									= link_to "X", "/notes/#{@note.id}/items/#{item.id}" , method: :delete, data: { confirm: "Quieres borrar esto?"}, class: 'btn red'
+			.row
+				.center-align
+					= render 'estado'

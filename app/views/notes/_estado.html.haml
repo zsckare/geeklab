@@ -1,0 +1,6 @@
+= form_for @note,remote: true, html: {id:"notes-form", :"data-type" => "json"} do |s|
+  .row
+    = s.hidden_field :status, value: "1"
+  .row
+    .center-align
+    = s.submit 'Guardar', class: 'btn blue'

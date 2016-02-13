@@ -1,0 +1,25 @@
+.row
+	.col.s12.m12.l12.card.padding-largo
+		.row
+			%h3.center-align
+				Ultimas Notas
+		.row
+			%table
+				%thead
+					%th
+						Folio
+					%th
+						Cliente
+				%tbody
+					-@notes.each do |note|
+						%tr
+							%td
+								= note.folio
+							%td
+								= note.client.name
+								= note.client.lastname
+							%td
+								= link_to 'Ver', note, class: 'btn blue'
+
+
+
