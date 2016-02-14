@@ -1,0 +1,14 @@
+%div
+	%table.striped
+		%thead
+			%th
+			%th
+			%th
+		%tbody
+			%tr
+				%td.left
+					=client.name
+				%td.left
+					=client.lastname
+				%td.right
+					= link_to "Ver", client, class: 'btn'

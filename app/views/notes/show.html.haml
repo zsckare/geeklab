@@ -48,6 +48,9 @@
 									= item.price
 								%td.right
 									= link_to "X", "/notes/#{@note.id}/items/#{item.id}" , method: :delete, data: { confirm: "Quieres borrar esto?"}, class: 'btn red'
+									%a{href:"", class: 'btn'}
+										%i.material-icons
+											send
 			.row
 				.center-align
 					= render 'estado'

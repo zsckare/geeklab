@@ -1,15 +1,25 @@
-%p#notice= notice
+.row
+	.col.s12.m12.l12.padding-largo.card
+		.row
+			%p
+				%b Name:
+				= @client.name
+			
+				%b Lastname:
+				= @client.lastname
+			
+				%b Number:
+				= @client.number
+		.row
+			- @notes.each do |note|
+				%tr
+					%td= note.folio
+					%td.right
+						= link_to 'Ver', note, class: 'btn blue'
 
-%p
-  %b Name:
-  = @client.name
-%p
-  %b Lastname:
-  = @client.lastname
-%p
-  %b Number:
-  = @client.number
+		
+		.row
+			
+			= link_to 'Edit', edit_client_path(@client)
 
-= link_to 'Edit', edit_client_path(@client)
-\|
-= link_to 'Back', clients_path
+			= link_to 'Back', clients_path

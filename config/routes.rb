@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'search/create'
+
   devise_for :users
   resources :notes do
     resources :items, only: [:create, :update, :destroy]

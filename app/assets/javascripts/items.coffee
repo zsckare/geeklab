@@ -6,6 +6,9 @@
 $(document).on "ajax:success", "form#items-form",(ev,data)->
 	console.log data
 	$("#items-container").append("<tr><td> #{data.device}</td> <td>#{data.brand}</td><td>#{data.model}</td><td>#{data.details}</td><td>#{data.price}</td></tr>")
+	$("#model-input").val("");
+	$("#cotizacion-input").val("");
+	$("#details-input").val("");
 
 $(document).on "ajax:error", "form#items-form",(ev,data)->
 	console.log data

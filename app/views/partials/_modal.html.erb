@@ -1,0 +1,16 @@
+<div class="modal" id="modal1">
+	<div class="modal-content">
+		<h4>Buscar</h4>
+		<%= form_tag "/search/create", method: :get, remote: :true, id: "search-form" %>
+
+			<%= text_field_tag :keyword, nil, placeholder: "Buscar", id: 'bus' %>
+			<%= content_tag :button, type: :submit, class: 'btn blue' do %>
+				<i class="material-icons">search</i>
+			<%end%>
+		
+		<div id="resultados"></div>
+
+	</div>
+		
+</div>
+	

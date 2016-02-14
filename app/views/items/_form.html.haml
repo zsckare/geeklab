@@ -9,13 +9,13 @@
     = f.collection_select :brand, Brand.all, :name, :name, include_blank: true
   .input-field
     = f.label :model, "Modelo"
-    = f.text_field :model
+    = f.text_field :model, id: "model-input"
   .input-field
     = f.label :price, "Cotizacion"
-    = f.text_field :price
+    = f.text_field :price, id: "cotizacion-input"
   .input-field
     = f.label :details, "detalles"
-    = f.text_area :details,class: 'materialize-textarea'
+    = f.text_area :details,class: 'materialize-textarea', id: "details-input"
 
   .actions
     = f.submit 'Agregar', class: 'btn blue'
