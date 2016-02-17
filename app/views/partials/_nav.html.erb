@@ -5,10 +5,10 @@
         <%if user_signed_in?%>
           <li><a class="waves-effect waves-light  modal-trigger" href="#modal1"><i class="material-icons">search</i> </a>
 </li>
-          <li><%= link_to "Notas", notes_path%></li>
-          <li><%= link_to "Clientes", clients_path%></li>
-          <li><%= link_to "Dispositivos", devices_path%></li>
-          <li><%= link_to "Marcas", brands_path%></li>
+          <li><%= link_to "Notas", notes_path, id: 'nota'%></li>
+          <li><%= link_to "Clientes", clients_path, id: 'clientes'%></li>
+          <li><%= link_to "Dispositivos", devices_path,id: 'device'%></li>
+          <li><%= link_to "Marcas", brands_path,id: 'marca'%></li>
           
           <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, id: 'salida' %> </li>
         <% end %>

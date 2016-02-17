@@ -1,14 +1,18 @@
 .row
 	.col.s12.m12.l12.card.padding-largo
-		%p
-			%b Folio:
-			= @note.folio
-		%p
-			%b Cliente:
-			= @note.client.fullname
-		%p
-			%b Telefono:
-			= @note.client.number
+		.row
+			.col.s3.m3.l2
+				= image_tag "GeekLab", class: 'responsive-img'
+			.col.s9.m9.l6.offset-l3
+				%p
+					%b Folio:
+					= @note.folio
+				%p
+					%b Cliente:
+					= @note.client.fullname
+				%p
+					%b Telefono:
+					= @note.client.number
 .row
 	-if @note.status == nil
 		.col.s12.m12.l4.card.padding-largo
@@ -48,6 +52,7 @@
 									= item.price
 								%td.right
 									= link_to "X", "/notes/#{@note.id}/items/#{item.id}" , method: :delete, data: { confirm: "Quieres borrar esto?"}, class: 'btn red'
+									= link_to "","/notes/#{@note.id}/items/#{item.id}", method: :post, data:{ status: "1" }
 									%a{href:"", class: 'btn'}
 										%i.material-icons
 											send

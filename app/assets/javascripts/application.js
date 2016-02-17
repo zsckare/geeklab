@@ -84,5 +84,23 @@ $(document).ready(function() {
         $(this).remove();
       });*/
     }, 3000);
-     $('.modal-trigger').leanModal();
+     
 });
+
+function menu () {
+	nota = '<i class="material-icons left">note</i>';
+	$("#nota").append(nota);
+
+	clientes = '<i class="material-icons left">people</i>';
+	$("#clientes").append(clientes);
+
+
+	device = '<i class="material-icons left">important_devices</i>';
+	$("#device").append(device);
+
+	marca = '<i class="material-icons left">branding_watermark</i>';
+	$("#marca").append(marca);
+	
+	salida = '<i class="material-icons left">exit_to_app</i>';
+	$("#salida").append(salida);
+}

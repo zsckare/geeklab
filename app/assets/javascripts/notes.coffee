@@ -9,3 +9,8 @@ $(document).on "ajax:success", "form#notes-form",(ev,data)->
 
 $(document).on "ajax:error", "form#notes-form",(ev,data)->
 	console.log data
+
+
+$(document).on "ready page:load", ()->
+	$('.modal-trigger').leanModal();
+	menu();
