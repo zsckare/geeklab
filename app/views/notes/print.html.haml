@@ -3,11 +3,15 @@
 		#print
 			.row
 				.col.s3.m3.l2.offset-l4
-					= image_tag "GeekLab", style: 'width:100px;'
+					= image_tag "GeekLab", style: 'width:100px; margin-left:30px;'
 			.row
 				%p
 					%b Folio:
 					= @note.folio
+				%p
+					%b Sucursal:
+					= @note.sucursal
+				
 				%p
 					%b Fecha:
 					= @note.created_at.strftime("%d/%m/%Y")
@@ -15,6 +19,40 @@
 				%p
 					%b Cliente:
 					= @note.client.fullname
+			.row
+				- @note.items.each do |item|
+					%p.divisor
+
+					%p
+						%b
+							Dispositivo:
+						=item.device 
+						=item.brand 
+						=item.model
+					%p
+						%b
+							Detalles:
+						=item.details
+					%p
+						%b
+							Cotizacion
+						=item.price
+					%p
+						%b
+							Whatsapp:
+						6182110443
+					%p.divisor
+
+					%p
+						Acepto que despues de 30 dias el aparato mencionado pasara a ser propiedad de la empresa y podra disponer de el como mejor le convenga.
+					%p{style:"padding-bottom:1em;"}
+						(Conserve su nota, en caso de extravio de la misma genera un cargo de $30)
+					
+					%p{style:"padding-left:2em;"}
+						_____________________________
+					%p{style:"padding-left:5em;"}
+						Nombre y Firma
+
 					
 
 	.row
